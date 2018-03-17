@@ -1,0 +1,8 @@
+﻿{
+  "name": "Light",
+  "description": "A light Metro theme",
+  "version": "1.0.1",
+  "author": "Fredrik Winkvist <fredrik@winkvist.com>",
+  "url": "http://www.winkvist.com",
+  "uiHint": "light"
+}

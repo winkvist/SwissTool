@@ -1,0 +1,24 @@
+﻿<Window x:Class="SwissTool.XT.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:tn="clr-namespace:Hardcodet.Wpf.TaskbarNotification;assembly=Hardcodet.Wpf.TaskbarNotification" Title="{Binding Path=AppName}" Height="100" Width="100" ShowInTaskbar="False" Visibility="Hidden">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default/Main.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <tn:TaskbarIcon x:Name="MainTrayIcon" ToolTipText="{Binding Path=AppName}" IconSource="../Icons/App.ico">
+            <tn:TaskbarIcon.ContextMenu>
+                <ContextMenu ItemsSource="{Binding ExtensionMenuItems}" Style="{DynamicResource ContextMenuStyle}">
+                    <ContextMenu.Resources>
+                        <Image x:Key="ImageIcon" x:Shared="False" Source="{Binding Path=Icon}" Height="32px" Width="32px"/>
+                        <Image x:Key="SmallImageIcon" x:Shared="False" Source="{Binding Path=Icon}" Height="16px" Width="16px"/>
+                    </ContextMenu.Resources>
+                </ContextMenu>
+            </tn:TaskbarIcon.ContextMenu>
+        </tn:TaskbarIcon>
+    </Grid>
+</Window>

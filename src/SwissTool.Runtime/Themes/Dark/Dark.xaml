@@ -1,0 +1,115 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="IconPackageManager" UriSource="Icons/48x48/software_installer.png" />
+    <BitmapImage x:Key="IconSettings" UriSource="Icons/48x48/services.png" />
+    
+    <Style x:Key="ContextMenuHeaderStyle" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="{DynamicResource MenuFontSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource HeaderFontFamily}" />
+        <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
+        <Setter Property="Padding" Value="5" />
+    </Style>
+    
+    <ControlTemplate x:Key="ContextMenuTemplate" TargetType="{x:Type ContextMenu}">
+        <ControlTemplate.Resources>
+            <Style TargetType="{x:Type MenuItem}">
+                <Setter Property="Foreground" Value="{DynamicResource BlackBrush}"/>
+                <Setter Property="HeaderTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding}" Margin="-5,0,0,0" />
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ControlTemplate.Resources>
+
+        <Border BorderThickness="0" Margin="10" Background="{DynamicResource WhiteBrush}">
+
+            <StackPanel>
+
+                <Border Background="{DynamicResource AccentColorBrush}" BorderThickness="0" Margin="0 0 0 3">
+                    <Label Style="{StaticResource ContextMenuHeaderStyle}">EXTENSIONS</Label>
+                </Border>
+
+                <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto" MaxHeight="800" Margin="5">
+                    <ItemsPresenter Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.DirectionalNavigation="Cycle" />
+                </ScrollViewer>
+
+                <Border Background="{DynamicResource AccentColorBrush}" BorderThickness="0" Margin="0 3 0 3">
+                    <Label  Style="{StaticResource ContextMenuHeaderStyle}">APPLICATION</Label>
+                </Border>
+
+                <StackPanel Margin="5">
+                    <MenuItem Header="Settings" Command="{Binding ShowSettingsCommand}" ToolTip="Customize the application settings" ToolTipService.InitialShowDelay="3000">
+                        <MenuItem.Icon>
+                            <Image Width="20" Height="20" Source="Icons/24x24/services.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="Package Manager" Command="{Binding CheckForUpdatesCommand}" ToolTip="Open the package manager to search for application updates" ToolTipService.InitialShowDelay="3000">
+                        <MenuItem.Icon>
+                            <Image Width="20" Height="20" Source="Icons/24x24/software_installer.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="About..." Command="{Binding ShowAboutCommand}" ToolTip="Shows the about window" ToolTipService.InitialShowDelay="3000">
+                        <MenuItem.Icon>
+                            <Image Width="20" Height="20" Source="Icons/24x24/help.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="Exit" Command="{Binding ExitCommand}" ToolTip="Closes the application" ToolTipService.InitialShowDelay="3000">
+                        <MenuItem.Icon>
+                            <Image Width="20" Height="20" Source="Icons/24x24/exit.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="BaseMenuItemStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="FontSize" Value="{DynamicResource NormalFontSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource ContentFontFamily}" />
+        <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding}" Margin="0,0,0,0" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+   
+    <Style x:Key="SubMenuItemStyle" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource BaseMenuItemStyle}">
+        <Setter Property="Icon" Value="{DynamicResource SmallImageIcon}" />
+        <Setter Property="ToolTip" Value="{Binding Description}" />
+        <Setter Property="FontSize" Value="{DynamicResource ContentFontSize}" />
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding}" Margin="0" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MenuItemStyle" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource BaseMenuItemStyle}">
+        <Setter Property="Icon" Value="{DynamicResource ImageIcon}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource SubMenuItemStyle}" />
+    </Style>
+
+    <Style TargetType="{x:Type ContextMenu}" x:Key="ContextMenuStyle">
+        <Setter Property="FontSize" Value="{DynamicResource ContentFontSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource ContentFontFamily}" />
+        <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
+        <Setter Property="Template" Value="{StaticResource ContextMenuTemplate}" />
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource MenuItemStyle}" />
+    </Style>
+
+    <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
+</ResourceDictionary>

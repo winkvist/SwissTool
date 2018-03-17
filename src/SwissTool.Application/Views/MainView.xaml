@@ -1,0 +1,30 @@
+﻿<controls:MetroWindow x:Class="SwissTool.Application.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:tn="clr-namespace:Hardcodet.Wpf.TaskbarNotification;assembly=Hardcodet.Wpf.TaskbarNotification"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        Title="{Binding Path=AppName}" 
+        Height="100" 
+        Width="100" 
+        ShowInTaskbar="False" 
+        Visibility="Hidden">
+    <Window.Resources>
+    </Window.Resources>
+    <Grid>
+        <tn:TaskbarIcon x:Name="MainTrayIcon" 
+                        TrayBalloonTipClicked="MainTrayIcon_OnTrayBalloonTipClicked" 
+                        TrayBalloonTipShown="MainTrayIcon_OnTrayBalloonTipShown"
+                        TrayBalloonTipClosed="MainTrayIcon_OnTrayBalloonTipClosed"
+                        ToolTipText="{Binding Path=AppName}" 
+                        IconSource="../Resources/Icons/App.ico">
+            <tn:TaskbarIcon.ContextMenu>
+                <ContextMenu ItemsSource="{Binding ExtensionMenuItems}" Style="{DynamicResource ContextMenuStyle}">
+                    <ContextMenu.Resources>
+                        <Image x:Key="ImageIcon" x:Shared="False" Source="{Binding Path=Icon}" Height="32" Width="32" Loaded="ImageIcon_OnLoaded" />
+                        <Image x:Key="SmallImageIcon" x:Shared="False" Source="{Binding Path=Icon}" Height="16" Width="16" />
+                    </ContextMenu.Resources>
+                </ContextMenu>
+            </tn:TaskbarIcon.ContextMenu>
+        </tn:TaskbarIcon>
+    </Grid>
+</controls:MetroWindow>

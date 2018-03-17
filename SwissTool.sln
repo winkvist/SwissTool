@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTool.Runtime", "src\SwissTool.Runtime\SwissTool.Runtime.csproj", "{8BFF845C-7643-4B8B-8FA1-29B770A418BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTool.Application", "src\SwissTool.Application\SwissTool.Application.csproj", "{231B8E12-8989-4EF5-A5E0-0B68A796C97E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTool.Logging", "src\SwissTool.Logging\SwissTool.Logging.csproj", "{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTool.Updater", "src\SwissTool.Updater\SwissTool.Updater.csproj", "{B7D20168-0B58-4E5D-959C-804473BCA16D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTool.Loader", "src\SwissTool.Loader\SwissTool.Loader.csproj", "{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{37176C25-47A4-42F0-83C1-0CB3117E031F}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		SwissTool.vsmdi = SwissTool.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Debug|x86.ActiveCfg = Debug|x86
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Debug|x86.Build.0 = Debug|x86
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Release|Any CPU.ActiveCfg = Release|x86
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Release|Mixed Platforms.Build.0 = Release|x86
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Release|x86.ActiveCfg = Release|x86
+		{8BFF845C-7643-4B8B-8FA1-29B770A418BB}.Release|x86.Build.0 = Release|x86
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{231B8E12-8989-4EF5-A5E0-0B68A796C97E}.Release|x86.ActiveCfg = Release|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{87B9AB69-EFE4-4E20-BB55-AC0AC467E2BA}.Release|x86.ActiveCfg = Release|Any CPU
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Debug|x86.ActiveCfg = Debug|x86
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Debug|x86.Build.0 = Debug|x86
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Release|Any CPU.ActiveCfg = Release|x86
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Release|x86.ActiveCfg = Release|x86
+		{B7D20168-0B58-4E5D-959C-804473BCA16D}.Release|x86.Build.0 = Release|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Debug|x86.ActiveCfg = Debug|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Debug|x86.Build.0 = Debug|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Release|Any CPU.ActiveCfg = Release|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Release|x86.ActiveCfg = Release|x86
+		{B248DBF7-C842-49B1-BDD2-35B3B5983A3B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {647D1569-B4CC-4FF5-9ABB-6ED6F6B15156}
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SwissTool.vsmdi
+	EndGlobalSection
+EndGlobal
