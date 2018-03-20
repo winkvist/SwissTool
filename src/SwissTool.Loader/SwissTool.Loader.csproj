@@ -56,7 +56,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SwissTool.Framework, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SwissTool.Framework.1.1.1\lib\net452\SwissTool.Framework.dll</HintPath>
+      <HintPath>..\..\packages\SwissTool.Framework.1.1.2\lib\net452\SwissTool.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
