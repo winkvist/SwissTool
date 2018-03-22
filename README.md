@@ -2,10 +2,11 @@
 
 SwissTool at its core is designed to be a light-weight host application for plugins. SwissTool allows for powerful plugin development with little effort by providing an easy way to assign global hotkeys to commands. The primary aim with SwissTool is speed and to make every day tools available at all times
 
+SwissTool uses [MahApps.Metro](https://github.com/MahApps/MahApps.Metro) as a toolkit for its Metro UI.
+
 ## Plugin development
 Check out the tutorial on plugin development to get started.
 * [Documentation](https://github.com/winkvist/SwissTool/wiki/Plugin-Development)
-
 
 ## Demo
 
