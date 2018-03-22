@@ -4,9 +4,8 @@ SwissTool at its core is designed to be a light-weight host application for plug
 
 SwissTool uses [MahApps.Metro](https://github.com/MahApps/MahApps.Metro) as a toolkit for its Metro UI.
 
-## Plugin development
-Check out the tutorial on plugin development to get started.
-* [Documentation](https://github.com/winkvist/SwissTool/wiki/Plugin-Development)
+## Get started
+Check out the tutorial on [plugin development](https://github.com/winkvist/SwissTool/wiki/Plugin-Development) to get started.
 
 ## Demo
 
