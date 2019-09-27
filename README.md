@@ -1,6 +1,13 @@
 # ![alt text](logo.png "SwissTool") SwissTool
 
-SwissTool at its core is designed to be a light-weight host application for plugins. SwissTool allows for powerful plugin development with little effort by providing an easy way to assign global hotkeys to commands. The primary aim with SwissTool is speed and to make every day tools available at all times
+SwissTool at its core is designed to be a light-weight host application for plugins. <br/>
+SwissTool offers a framework with global hotkey binding support out of the box so that you as a plugin developer can expose your own actions to be executed with a hotkey combination anywhere within Windows.
+The primary aim with SwissTool is speed and to make every day tools available at all times.
+
+SwissTool uses [MahApps.Metro](https://github.com/MahApps/MahApps.Metro) as a toolkit for its Metro UI.
+
+## Get started
+Check out the tutorial on [plugin development](https://github.com/winkvist/SwissTool/wiki/Plugin-Development) to get started.
 
 ## Demo
 
@@ -10,10 +17,6 @@ alt="Quick Note - Demo" width="240" height="180" border="10" /></a>
 ## Installer
 **Windows:**
 [SwissTool v2.2.2](https://github.com/winkvist/SwissTool/releases/download/2.2.2/Installer.zip) (includes [QuickNote](https://github.com/winkvist/SwissTool.Ext.QuickNote) and [ScreenPix](https://github.com/winkvist/SwissTool.Ext.ScreenPix))
-
-## Developer?
-Check out the tutorial on plugin development to get started.
-* [Plugin Development](https://github.com/winkvist/SwissTool/wiki/Plugin-Development)
 
 ## Screenshots
 
