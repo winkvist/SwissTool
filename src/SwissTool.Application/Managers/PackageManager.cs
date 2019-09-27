@@ -36,9 +36,9 @@ namespace SwissTool.Application.Managers
         /// The update service url
         /// </summary>
 #if DEBUG
-        private const string ServiceBaseUrl = "http://localhost:60565/api/repository/";
+        private const string ServiceBaseUrl = "https://swisstool-packages.azurewebsites.net/"; //"http://localhost:60565/api/repository/";
 #else
-        private const string ServiceBaseUrl = "http://www.swissapps.org/api/repository/";
+        private const string ServiceBaseUrl = "https://swisstool-packages.azurewebsites.net/";
 #endif
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace SwissTool.Application.Managers
             using (var client = new HttpClient())
             {
                 var json = JsonConvert.SerializeObject(versions);
-                var response = client.PostAsync(new Uri(new Uri(ServiceBaseUrl), "checkpackageupdates"), new StringContent(json, Encoding.Default, "application/json")).Result;
+                var response = client.PostAsync(new Uri(new Uri(ServiceBaseUrl), "check"), new StringContent(json, Encoding.Default, "application/json")).Result;
                 var stringResult = response.Content.ReadAsStringAsync().Result;
 
                 return stringResult == "true";
@@ -89,7 +89,7 @@ namespace SwissTool.Application.Managers
             {
                 var json = JsonConvert.SerializeObject(versions);
 
-                var action = includePreReleases ? "getpackageupdates/?includePreReleases=true" : "getpackageupdates";
+                var action = includePreReleases ? "fetch/?includePreReleases=true" : "fetch";
 
                 var uri = new Uri(new Uri(ServiceBaseUrl), action);
                 var response = client.PostAsync(uri, new StringContent(json, Encoding.Default, "application/json")).Result;
@@ -133,7 +133,7 @@ namespace SwissTool.Application.Managers
                     var fileExtension = Path.GetExtension(downloadFilename);
                     var fileName = Guid.NewGuid() + fileExtension;
                     var tempFilePath = Path.Combine(AppConstants.UpdatesDataPath, fileName);
-                    var downloadUrl = ServiceBaseUrl + $"downloadpackage/{updateToInstall.Identifier}/{downloadFilename}";
+                    var downloadUrl = updateToInstall.DownloadUrl;
 
                     client.DownloadFile(downloadUrl, tempFilePath);
 

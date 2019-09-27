@@ -84,16 +84,16 @@ namespace SwissTool.Runtime
             if (!this.InstanceRunning("Updater"))
             {
                 var updaterFile = Path.Combine(AppConstants.ApplicationDataPath, "Updater.exe");
-                var nunrarFile = Path.Combine(AppConstants.ApplicationDataPath, "NUnrar.dll");
+                var unrarFile = Path.Combine(AppConstants.ApplicationDataPath, "SharpCompress.dll");
 
                 if (File.Exists(updaterFile))
                 {
                     File.Delete(updaterFile);
                 }
 
-                if (File.Exists(nunrarFile))
+                if (File.Exists(unrarFile))
                 {
-                    File.Delete(nunrarFile);
+                    File.Delete(unrarFile);
                 }
             }
 

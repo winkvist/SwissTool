@@ -1,4 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ApplicationHost.cs" company="Fredrik Winkvist">
 //   Copyright (c) Fredrik Winkvist. All rights reserved.
 // </copyright>
@@ -6,6 +6,8 @@
 //   Defines the ApplicationHost type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
+using System.Net;
 
 namespace SwissTool.Application
 {
@@ -149,6 +151,8 @@ namespace SwissTool.Application
             this.mainViewModel = viewModel;
             
             this.windowHelper = new WindowInteropHelper(mainView);
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             ApplicationManager.Setup(this.Settings);
 

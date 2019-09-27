@@ -89,9 +89,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\NUnrar.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\Updater.exe" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />
+    <EmbeddedResource Include="Resources\SharpCompress.dll" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

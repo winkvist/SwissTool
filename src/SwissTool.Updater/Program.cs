@@ -60,7 +60,7 @@ namespace SwissTool.Updater
                 throw new ApplicationException("Unable to load updater assembly.");
             }
 
-            UpdatesPath = Path.Combine(CurrentPath, "Updates");
+            UpdatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SwissTool", "Updates");
         }
 
         /// <summary>

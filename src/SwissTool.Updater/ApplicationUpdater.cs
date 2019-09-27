@@ -7,6 +7,10 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using SharpCompress.Archives;
+using SharpCompress.Archives.Rar;
+using SharpCompress.Common;
+
 namespace SwissTool.Updater
 {
     using System;
@@ -15,9 +19,6 @@ namespace SwissTool.Updater
     using System.Linq;
     using System.Xml;
     using System.Xml.Linq;
-
-    using NUnrar.Archive;
-    using NUnrar.Common;
 
     /// <summary>
     /// The application updater.
@@ -86,13 +87,13 @@ namespace SwissTool.Updater
                     using (var streamReader = new StreamReader(installationFile))
                     {
                         // Open and extract the downloaded archive.
-                        var rarArchive = RarArchive.Open(streamReader.BaseStream, RarOptions.GiveDirectoryEntries);
+                        var rarArchive = RarArchive.Open(streamReader.BaseStream);
 
                         foreach (var entry in rarArchive.Entries)
                         {
                             if (entry.IsDirectory)
                             {
-                                var entryPath = Path.Combine(applicationPath, entry.FilePath);
+                                var entryPath = Path.Combine(applicationPath, entry.Key);
 
                                 if (!Directory.Exists(entryPath))
                                 {
@@ -101,7 +102,7 @@ namespace SwissTool.Updater
                             }
                             else
                             {
-                                entry.WriteToDirectory(applicationPath, ExtractOptions.ExtractFullPath | ExtractOptions.Overwrite);
+                                entry.WriteToDirectory(applicationPath, new ExtractionOptions { ExtractFullPath = true, Overwrite = true });
                             }
                         }
                     }

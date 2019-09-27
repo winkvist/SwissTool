@@ -37,7 +37,7 @@ namespace SwissTool.Application.ViewModels
                     return string.Empty;
                 }
 
-                return $"Version {this.Model.Version.Major}.{this.Model.Version.Minor}";
+                return $"Version {this.Model.Version.Major}.{this.Model.Version.Minor}.{this.Model.Version.Build}";
             }
         }
     }

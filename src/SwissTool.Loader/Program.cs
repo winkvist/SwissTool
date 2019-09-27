@@ -106,7 +106,7 @@ namespace SwissTool.Loader
         private static void RunUpdater()
         {
             var updaterFile = Path.Combine(AppConstants.ApplicationDataPath, "Updater.exe");
-            var unrarFile = Path.Combine(AppConstants.ApplicationDataPath, "NUnrar.dll");
+            var unrarFile = Path.Combine(AppConstants.ApplicationDataPath, "SharpCompress.dll");
             
             if (File.Exists(updaterFile))
             {
@@ -118,7 +118,7 @@ namespace SwissTool.Loader
                 File.Delete(unrarFile);
             }
 
-            WriteResourceToFile("SwissTool.Loader.Resources.NUnrar.dll", unrarFile);
+            WriteResourceToFile("SwissTool.Loader.Resources.SharpCompress.dll", unrarFile);
             WriteResourceToFile("SwissTool.Loader.Resources.Updater.exe", updaterFile);
 
             var arguments = "\"" + CurrentDirectory + "\"" + " " + Identifier + " " + debugEnabled;
