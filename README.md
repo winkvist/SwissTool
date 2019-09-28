@@ -16,7 +16,7 @@ alt="Quick Note - Demo" width="240" height="180" border="10" /></a>
 
 ## Installer
 **Windows:**
-[SwissTool v2.2.2](https://github.com/winkvist/SwissTool/releases/download/2.2.2/Installer.zip) (includes [QuickNote](https://github.com/winkvist/SwissTool.Ext.QuickNote) and [ScreenPix](https://github.com/winkvist/SwissTool.Ext.ScreenPix))
+[SwissTool v2.2.4](https://github.com/winkvist/SwissTool/releases/download/2.2.4/Installer.zip) (includes [QuickNote](https://github.com/winkvist/SwissTool.Ext.QuickNote) and [ScreenPix](https://github.com/winkvist/SwissTool.Ext.ScreenPix))
 
 ## Screenshots
 
