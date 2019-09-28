@@ -21,7 +21,7 @@ namespace SwissTool.Application.ViewModels
     using SwissTool.Application.Managers;
     using SwissTool.Application.Models;
     using SwissTool.Framework.Infrastructure;
-    using SwissTool.Framework.UI.Commanding;
+    using SwissTool.Framework.Commanding;
     using SwissTool.Framework.UI.Infrastructure;
     using SwissTool.Framework.UI.Models;
     using SwissTool.Framework.Utilities.Serialization;
