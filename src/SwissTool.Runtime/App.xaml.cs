@@ -295,7 +295,7 @@ namespace SwissTool.Runtime
         {
             ResourceDictionary resourceDict = null;
 
-            var uri = new Uri("/MahApps.Metro;component/Styles/Accents/" + accentName + ".xaml", UriKind.RelativeOrAbsolute);
+            var uri = new Uri("/MahApps.Metro;component/Styles/Themes/Dark." + accentName + ".xaml", UriKind.RelativeOrAbsolute);
 
             try
             {

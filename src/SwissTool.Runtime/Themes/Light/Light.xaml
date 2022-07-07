@@ -4,9 +4,9 @@
     <BitmapImage x:Key="IconSettings" UriSource="Icons/48x48/services.png" />
     
     <Style x:Key="ContextMenuHeaderStyle" TargetType="{x:Type Label}">
-        <Setter Property="FontSize" Value="{DynamicResource MenuFontSize}" />
-        <Setter Property="FontFamily" Value="{DynamicResource HeaderFontFamily}" />
-        <Setter Property="Foreground" Value="{DynamicResource WhiteBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource MahApps.Font.Size.Menu}" />
+        <Setter Property="FontFamily" Value="{DynamicResource MahApps.Fonts.Family.Header}" />
+        <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.ThemeBackground}" />
         <Setter Property="Padding" Value="5" />
     </Style>
 
@@ -23,18 +23,18 @@
             </Style>
         </ControlTemplate.Resources>
         
-        <Border BorderThickness="0" Margin="10" CornerRadius="0" Background="{DynamicResource WhiteBrush}">
+        <Border BorderThickness="0" Margin="10" CornerRadius="0" Background="{DynamicResource MahApps.Brushes.ThemeBackground}">
             <Border.BitmapEffect>
                 <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="5" Opacity=".2" Softness="9" />
             </Border.BitmapEffect>
             <StackPanel>
-                <Border Background="{DynamicResource AccentColorBrush}" BorderThickness="0" Margin="0 0 0 3">
+                <Border Background="{DynamicResource MahApps.Brushes.Accent}" BorderThickness="0" Margin="0 0 0 3">
                     <Label Style="{StaticResource ContextMenuHeaderStyle}">EXTENSIONS</Label>
                 </Border>
                 <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto" MaxHeight="800" Margin="5">
                     <ItemsPresenter Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.DirectionalNavigation="Cycle"/>
                 </ScrollViewer>
-                <Border Background="{DynamicResource AccentColorBrush}" BorderThickness="0" Margin="0 3 0 3">
+                <Border Background="{DynamicResource MahApps.Brushes.Accent}" BorderThickness="0" Margin="0 3 0 3">
                     <Label Style="{StaticResource ContextMenuHeaderStyle}">APPLICATION</Label>
                 </Border>
                 <StackPanel Margin="5">
@@ -67,9 +67,9 @@
     </ControlTemplate>
 
     <Style x:Key="BaseMenuItemStyle" TargetType="{x:Type MenuItem}">
-        <Setter Property="FontSize" Value="{DynamicResource NormalFontSize}" />
-        <Setter Property="FontFamily" Value="{DynamicResource ContentFontFamily}" />
-        <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource MahApps.Font.Size.Default}" />
+        <Setter Property="FontFamily" Value="{DynamicResource MahApps.Fonts.Family.Control}" />
+        <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.ThemeForeground}" />
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>
@@ -82,7 +82,7 @@
     <Style x:Key="SubMenuItemStyle" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource BaseMenuItemStyle}">
         <Setter Property="Icon" Value="{DynamicResource SmallImageIcon}" />
         <Setter Property="ToolTip" Value="{Binding Description}" />
-        <Setter Property="FontSize" Value="{DynamicResource ContentFontSize}" />
+        <Setter Property="FontSize" Value="{DynamicResource MahApps.Font.Size.Content}" />
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>
@@ -106,9 +106,9 @@
     </Style>
 
     <Style TargetType="{x:Type ContextMenu}" x:Key="ContextMenuStyle">
-        <Setter Property="FontSize" Value="{DynamicResource ContentFontSize}" />
-        <Setter Property="FontFamily" Value="{DynamicResource ContentFontFamily}" />
-        <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource MahApps.Font.Size.Content}" />
+        <Setter Property="FontFamily" Value="{DynamicResource MahApps.Fonts.Family.Control}" />
+        <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.ThemeForeground}" />
         <Setter Property="Template" Value="{StaticResource ContextMenuTemplate}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource MenuItemStyle}" />
     </Style>

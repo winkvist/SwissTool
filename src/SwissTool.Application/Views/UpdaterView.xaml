@@ -73,13 +73,13 @@
                           CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False">
                     <DataGrid.Columns>
                         <DataGridCheckBoxColumn Binding="{Binding Path=Install, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                            ElementStyle="{DynamicResource MetroDataGridCheckBox}"
-                            EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                            ElementStyle="{DynamicResource MahApps.Styles.CheckBox.DataGrid}"
+                            EditingElementStyle="{DynamicResource MahApps.Styles.CheckBox.DataGrid}"
                             Width="60" Header="Install" />
                         <DataGridTextColumn Width="220" Header="Application name" Binding="{Binding Path=Name}" IsReadOnly="True" />
                         <DataGridTextColumn Width="80" Header="Version" Binding="{Binding Path=VersionString}" IsReadOnly="True">
                             <DataGridTextColumn.HeaderStyle>
-                                <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource MetroDataGridColumnHeader}">
+                                <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource MahApps.Styles.DataGridColumnHeader}">
                                     <Setter Property="HorizontalContentAlignment" Value="Right"/>
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
@@ -91,7 +91,7 @@
                         </DataGridTextColumn>
                         <DataGridTextColumn Width="110" Header="Download size" Binding="{Binding Path=DownloadFileSizeString}" IsReadOnly="True">
                             <DataGridTextColumn.HeaderStyle>
-                                <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource MetroDataGridColumnHeader}">
+                                <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource MahApps.Styles.DataGridColumnHeader}">
                                     <Setter Property="HorizontalContentAlignment" Value="Right"/>
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
