@@ -6,13 +6,14 @@
     <Style x:Key="ContextMenuHeaderStyle" TargetType="{x:Type Label}">
         <Setter Property="FontSize" Value="{DynamicResource MahApps.Font.Size.Menu}" />
         <Setter Property="FontFamily" Value="{DynamicResource MahApps.Fonts.Family.Header}" />
-        <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.ThemeBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.ThemeForeground}" />
         <Setter Property="Padding" Value="5" />
     </Style>
 
     <ControlTemplate x:Key="ContextMenuTemplate" TargetType="{x:Type ContextMenu}">
         <ControlTemplate.Resources>
             <Style TargetType="{x:Type MenuItem}">
+            <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.ThemeForeground}"/>
                 <Setter Property="HeaderTemplate">
                     <Setter.Value>
                         <DataTemplate>
@@ -24,9 +25,6 @@
         </ControlTemplate.Resources>
         
         <Border BorderThickness="0" Margin="10" CornerRadius="0" Background="{DynamicResource MahApps.Brushes.ThemeBackground}">
-            <Border.BitmapEffect>
-                <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="5" Opacity=".2" Softness="9" />
-            </Border.BitmapEffect>
             <StackPanel>
                 <Border Background="{DynamicResource MahApps.Brushes.Accent}" BorderThickness="0" Margin="0 0 0 3">
                     <Label Style="{StaticResource ContextMenuHeaderStyle}">EXTENSIONS</Label>
@@ -70,10 +68,11 @@
         <Setter Property="FontSize" Value="{DynamicResource MahApps.Font.Size.Default}" />
         <Setter Property="FontFamily" Value="{DynamicResource MahApps.Fonts.Family.Control}" />
         <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.ThemeForeground}" />
+        <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.ThemeBackground}" />
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding}" />
+                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding}" Margin="0,0,0,0" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>
@@ -95,13 +94,6 @@
     <Style x:Key="MenuItemStyle" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource BaseMenuItemStyle}">
         <Setter Property="Icon" Value="{DynamicResource ImageIcon}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource SubMenuItemStyle}" />
-        <Setter Property="HeaderTemplate">
-            <Setter.Value>
-                <DataTemplate>
-                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding}" Margin="0,0,0,0" />
-                </DataTemplate>
-            </Setter.Value>
-        </Setter>
 
     </Style>
 

@@ -95,7 +95,7 @@ namespace SwissTool.Application.Managers
                     var theme = JsonConvert.DeserializeObject<Theme>(themeFileContents, new VersionConverter());
                     theme.Path = themeDirectory;
                     theme.DirectoryName = Path.GetFileName(themeDirectory);
-
+                    
                     themes.Add(theme);
                 }
                 catch (Exception ex)
