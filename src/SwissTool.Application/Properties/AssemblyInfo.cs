@@ -40,8 +40,8 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.2.4.0")]
-[assembly: AssemblyFileVersion("2.2.4.0")]
+[assembly: AssemblyVersion("2.3.0.0")]
+[assembly: AssemblyFileVersion("2.3.0.0")]
 [assembly: GuidAttribute("6e96735d-84f1-48ab-916d-5639dc763e47")]
 
 [assembly: InternalsVisibleTo("SwissTool")]
