@@ -7,8 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using SwissTool.Framework.UI.Enums;
-
 namespace SwissTool.Runtime
 {
     using System;
@@ -19,13 +17,16 @@ namespace SwissTool.Runtime
     using System.Windows;
     using System.Windows.Threading;
 
+    using ControlzEx.Theming;
+
     using SwissTool.Application;
-    using SwissTool.Application.Code.Events;
     using SwissTool.Application.Models;
     using SwissTool.Framework.Enums;
     using SwissTool.Framework.Infrastructure;
     using SwissTool.Framework.UI.Managers;
     using SwissTool.Logging;
+
+    using ThemeChangedEventArgs = SwissTool.Application.Code.Events.ThemeChangedEventArgs;
 
     /// <summary>
     /// Interaction logic for App
@@ -187,7 +188,7 @@ namespace SwissTool.Runtime
         /// Mains the application on theme changed.
         /// </summary>
         /// <param name="sender">The sender.</param>
-        /// <param name="args">The <see cref="ThemeChangedEventArgs"/> instance containing the event data.</param>
+        /// <param name="args">The <see cref="SwissTool.Application.Code.Events.ThemeChangedEventArgs"/> instance containing the event data.</param>
         private void MainApplicationOnThemeChanged(object sender, ThemeChangedEventArgs args)
         {
             this.ApplyTheme(args.Theme, args.Accent);
@@ -225,8 +226,7 @@ namespace SwissTool.Runtime
         private void ApplyTheme(string themeName, string accentName)
         {
             var themes = SwissTool.Application.Managers.WindowManager.Themes;
-            
-
+        
             var controlsDict = this.LoadStyleDictionary("Controls");
             if (controlsDict == null)
             {
@@ -258,36 +258,19 @@ namespace SwissTool.Runtime
                 throw new NullReferenceException("Unable to load the theme");
             }
 
-            var uiHint = currentTheme.UiHint;
-
-            var accentDict = this.LoadAccentDictionary(uiHint, accentName);
-            if (accentDict == null)
-            {
-                // Requested accent not found. Load default.
-
-                var defaultSettings = new AppSettings();
-
-                var defaultAccent = defaultSettings.Accent;
-                accentDict = this.LoadAccentDictionary(uiHint, defaultAccent);
-            }
-
-            if (accentDict == null)
-            {
-                throw new NullReferenceException("Unable to load the accent");
-            }
-
             var app = (App)Current;
-            
             app.Resources.MergedDictionaries.Clear();
             app.Resources.MergedDictionaries.Add(controlsDict);
             app.Resources.MergedDictionaries.Add(fontsDict);
-            app.Resources.MergedDictionaries.Add(accentDict);
             app.Resources.MergedDictionaries.Add(themeDict);
 
             WindowManager.CurrentTheme = currentTheme;
             WindowManager.CurrentAccent = accentName;
+
+            var uiHint = currentTheme.UiHint;
+            ThemeManager.Current.ChangeTheme(app, $"{uiHint}.{accentName}");
         }
-        
+
         /// <summary>
         /// Loads the theme dictionary.
         /// </summary>
@@ -316,30 +299,6 @@ namespace SwissTool.Runtime
             ResourceDictionary resourceDict = null;
 
             var uri = new Uri($"/MahApps.Metro;component/Styles/{styleName}.xaml", UriKind.RelativeOrAbsolute);
-
-            try
-            {
-                resourceDict = LoadComponent(uri) as ResourceDictionary;
-            }
-            catch (Exception ex)
-            {
-                Logger.ErrorException(ex, ex.Message);
-            }
-
-            return resourceDict;
-        }
-
-        /// <summary>
-        /// Loads the accent dictionary.
-        /// </summary>
-        /// <param name="uiHint">Dark/Light mode.</param>
-        /// <param name="accentName">Name of the accent.</param>
-        /// <returns>The resource dictionary.</returns>
-        private ResourceDictionary LoadAccentDictionary(UiHint uiHint, string accentName)
-        {
-            ResourceDictionary resourceDict = null;
-
-            var uri = new Uri($"/MahApps.Metro;component/Styles/Themes/{uiHint}.{accentName}.xaml", UriKind.RelativeOrAbsolute);
 
             try
             {

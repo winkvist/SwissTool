@@ -72,7 +72,7 @@
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
                             </DockPanel>
-                            <TextBlock TextWrapping="WrapWithOverflow" Foreground="Red" Padding="4" Visibility="{Binding IsRestartRequired, Converter={StaticResource BoolToVisibilityConverter}}">Application needs to be restarted for the changes to take effect</TextBlock>
+                            <TextBlock TextWrapping="WrapWithOverflow" Padding="4" Visibility="{Binding IsRestartRequired, Converter={StaticResource BoolToVisibilityConverter}}">Application needs to be restarted for the changes to take full effect</TextBlock>
                         </StackPanel>
                     </GroupBox>
                 </Grid>
@@ -116,7 +116,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Action" Width="185" Binding="{Binding Path=Action.Name}" IsReadOnly="True" />
-                                <DataGridTextColumn Header="Hotkey combination" Binding="{Binding Path=AssignedHotKeyDisplayString}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Hotkey" Binding="{Binding Path=AssignedHotKeyDisplayString}" IsReadOnly="True" Width="*" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </DockPanel>

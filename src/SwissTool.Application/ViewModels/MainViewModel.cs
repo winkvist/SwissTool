@@ -327,6 +327,7 @@ namespace SwissTool.Application.ViewModels
             }
 
             this.RequestApplyHotkeyDefinitions?.Invoke(false);
+            this.RequestApplyTheme?.Invoke(ApplicationManager.Settings.Theme, ApplicationManager.Settings.Accent);
         }
         
         /// <summary>
